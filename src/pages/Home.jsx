@@ -10,6 +10,7 @@ import gaming from '../assets/category/gaming.png';
 import simo from '../assets/testimonials/simo.png';
 import hasane from '../assets/testimonials/hasan.png';
 import latfa from '../assets/testimonials/latifa.png';
+
 const testimonials = [
     {
         id: 1,
@@ -60,7 +61,7 @@ function Home() {
             description: "Round-the-clock customer service"
         }
     ];
- 
+
     const categories = [
         { id: 1, name: 'Electronics', image: electronice },
         { id: 2, name: 'Accessories', image: accessories },
@@ -98,26 +99,24 @@ function Home() {
         <div className="min-h-screen bg-[#0a0a0a]">
             {/* Hero Section */}
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 sm:py-32">
-                {/* Background Image */}
                 <div className="absolute inset-0">
-                    <img 
-                        src={hero} 
-                        alt="hero background" 
+                    <img
+                        src={hero}
+                        alt="hero background"
                         className="w-full h-full object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 via-[#1a1a1a]/50 to-[#0a0a0a]/80"></div>
                 </div>
-                
-                {/* Content */}
+
                 <div className="relative z-20 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-                    <motion.h1 
+                    <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent leading-tight"
                     >
                         Global Shopping Experience
                     </motion.h1>
-                    <motion.p 
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
@@ -143,7 +142,7 @@ function Home() {
             {/* Features Section */}
             <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
@@ -169,45 +168,103 @@ function Home() {
                 </div>
             </section>
 
-            {/* Categories Preview */}
+
+            {/* Example Product Showcase */}
             <section className="py-12 sm:py-16 md:py-20 bg-[#0a0a0a]">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <motion.h2
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12"
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
                     >
-                        Popular Categories
-                    </motion.h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                        {categories.map((category, index) => (
+                        {/* Product Image */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="relative group"
+                        >
+                            <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-xl">
+                                <img
+                                    src={featuredProducts[0].image}
+                                    alt="Premium Headphones"
+                                    className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            </div>
+
+                            {/* Floating Specs */}
                             <motion.div
-                                key={category.id}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="relative h-48 sm:h-56 md:h-64 rounded-2xl overflow-hidden group cursor-pointer"
+                                className="absolute -bottom-6 left-6 right-6 p-4 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10"
                             >
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10"></div>
-                                <img 
-                                    src={category.image} 
-                                    alt={category.name}
-                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute bottom-0 left-0 p-6 z-20">
-                                    <h3 className="text-2xl font-bold text-white mb-2">{category.name}</h3>
-                                    <Link 
-                                        to={`/products?category=${category.name.toLowerCase()}`}
-                                        className="text-sm text-purple-300 hover:text-purple-200 transition-colors"
-                                    >
-                                        Explore Category →
-                                    </Link>
+                                <div className="flex justify-between items-center">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                        <span className="text-sm text-gray-300">Active Noise Cancelling</span>
+                                    </div>
+                                    <span className="text-sm text-purple-400">40h Battery Life</span>
                                 </div>
                             </motion.div>
-                        ))}
-                    </div>
+                        </motion.div>
+
+                        {/* Product Info */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="space-y-6"
+                        >
+                            <div>
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-4">
+                                    Premium Headphones
+                                </h2>
+                                <p className="text-gray-400 text-lg">
+                                    Experience crystal-clear sound quality with our latest premium headphones.
+                                    Featuring advanced noise cancellation and premium materials for ultimate comfort.
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                                    <h3 className="text-purple-400 font-semibold mb-1">High-Fidelity</h3>
+                                    <p className="text-sm text-gray-400">Studio-quality sound reproduction</p>
+                                </div>
+                                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                                    <h3 className="text-purple-400 font-semibold mb-1">Comfort</h3>
+                                    <p className="text-sm text-gray-400">Premium memory foam cushions</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-4">
+                                <span className="text-2xl font-bold text-white">$299.99</span>
+                                <span className="text-sm text-gray-400 line-through">$399.99</span>
+                                <span className="px-3 py-1 text-sm bg-green-500/20 text-green-400 rounded-full">
+                                    Save 25%
+                                </span>
+                            </div>
+
+                            <div className="flex flex-wrap gap-4">
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-300"
+                                >
+                                    Add to Cart
+                                </motion.button>
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-8 py-3 bg-white/5 text-white rounded-xl font-medium hover:bg-white/10 transition-all duration-300"
+                                >
+                                    Learn More
+                                </motion.button>
+                            </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
             </section>
 
@@ -218,9 +275,13 @@ function Home() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12"
+                        className="text-2xl text-white sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12"
                     >
-                        Featured Products
+                        <p className='text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent'>
+                            Featured Products
+
+                        </p>
+
                     </motion.h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         {featuredProducts.map((product, index) => (
@@ -233,8 +294,8 @@ function Home() {
                                 className="relative h-64 rounded-2xl overflow-hidden group cursor-pointer"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10"></div>
-                                <img 
-                                    src={product.image} 
+                                <img
+                                    src={product.image}
                                     alt={product.name}
                                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                 />
@@ -245,7 +306,7 @@ function Home() {
                                         <Star className="text-yellow-400 w-5 h-5 mr-1" />
                                         <span className="text-gray-300">{product.rating}</span>
                                     </div>
-                                    <Link 
+                                    <Link
                                         to={`/products/${product.id}`}
                                         className="text-sm text-purple-300 hover:text-purple-200 transition-colors flex items-center"
                                     >
@@ -257,6 +318,55 @@ function Home() {
                     </div>
                 </div>
             </section>
+
+
+            {/* Categories Preview */}
+            <section className="py-12 sm:py-16 md:py-20 bg-[#0a0a0a]">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-2xl sm:text-3xl md:text-4xl from-purple-400 to-pink-400  font-bold text-center mb-8 sm:mb-12"
+                    >
+                        <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent'>
+                            Popular Categories
+                        </h2>
+
+                    </motion.h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                        {categories.map((category, index) => (
+                            <motion.div
+                                key={category.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="relative h-48 sm:h-56 md:h-64 rounded-2xl overflow-hidden group cursor-pointer"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10"></div>
+                                <img
+                                    src={category.image}
+                                    alt={category.name}
+                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute bottom-0 left-0 p-6 z-20">
+                                    <h3 className="text-2xl font-bold text-white mb-2">{category.name}</h3>
+                                    <Link
+                                        to={`/products?category=${category.name.toLowerCase()}`}
+                                        className="text-sm text-purple-300 hover:text-purple-200 transition-colors"
+                                    >
+                                        Explore Category →
+                                    </Link>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+
+
 
             {/* Testimonials Section */}
             <section className="py-12 sm:py-16 md:py-20 bg-[#0a0a0a]">
@@ -298,7 +408,7 @@ function Home() {
                                         <p className="text-purple-400 text-sm">{testimonial.role}</p>
                                     </div>
                                 </div>
-                                
+
                                 <div className="flex mb-4">
                                     {[...Array(testimonial.rating)].map((_, i) => (
                                         <Star
@@ -308,9 +418,9 @@ function Home() {
                                         />
                                     ))}
                                 </div>
-                                
+
                                 <p className="text-gray-300 italic">"{testimonial.comment}"</p>
-                                
+
                                 <div className="mt-6 flex justify-end">
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
