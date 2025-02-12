@@ -7,6 +7,7 @@ import ProductDetail from './pages/ProductDetail';
 import CartPage from './pages/CartPage';
 import Checkout from './pages/Checkout';
 import Navbar from './components/Layout/Navbar';
+import Footer from './components/footer/Footer';
 function App() {
   return (
     <Router>
@@ -19,6 +20,8 @@ function App() {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
+
+      <Footer />
     </Router>
   );
 }

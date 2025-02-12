@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ShoppingCart, Heart, Share2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ShoppingCart, Heart, Share2, ChevronLeft, ChevronRight, Star, Package, RefreshCcw } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 function ProductDetail() {
@@ -27,16 +27,20 @@ function ProductDetail() {
 
     if (loading) {
         return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
+            <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] flex items-center justify-center">
+                <div className="p-8 rounded-lg backdrop-blur-lg bg-white/5">
+                    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
+                </div>
             </div>
         );
     }
 
     if (!product) {
         return (
-            <div className="min-h-screen flex items-center justify-center">
-                <p className="text-xl text-gray-600">Product not found</p>
+            <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] flex items-center justify-center">
+                <div className="p-8 rounded-lg backdrop-blur-lg bg-white/5">
+                    <p className="text-xl text-gray-300">Product not found</p>
+                </div>
             </div>
         );
     }
@@ -54,17 +58,17 @@ function ProductDetail() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <motion.div 
-                    className="bg-white rounded-2xl shadow-xl overflow-hidden"
+                    className="rounded-3xl overflow-hidden backdrop-blur-lg bg-white/5 border border-white/10"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         {/* Product Image Gallery */}
-                        <div className="relative h-96 lg:h-full">
+                        <div className="relative h-96 lg:h-[600px]">
                             <motion.img
                                 key={currentImageIndex}
                                 src={product?.images[currentImageIndex]}
@@ -77,27 +81,27 @@ function ProductDetail() {
                             {/* Navigation Arrows */}
                             <button
                                 onClick={prevImage}
-                                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transition-all"
+                                className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm transition-all"
                             >
                                 <ChevronLeft size={24} />
                             </button>
                             <button
                                 onClick={nextImage}
-                                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transition-all"
+                                className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm transition-all"
                             >
                                 <ChevronRight size={24} />
                             </button>
                             
                             {/* Thumbnail Preview */}
-                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 px-4 py-2 bg-white/80 rounded-full">
+                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 px-4 py-2 bg-black/50 backdrop-blur-sm rounded-full">
                                 {product?.images.map((_, index) => (
                                     <button
                                         key={index}
                                         onClick={() => setCurrentImageIndex(index)}
                                         className={`w-2 h-2 rounded-full transition-all ${
                                             currentImageIndex === index 
-                                                ? 'bg-purple-600 w-4' 
-                                                : 'bg-gray-400'
+                                                ? 'bg-purple-400 w-4' 
+                                                : 'bg-white/50'
                                         }`}
                                     />
                                 ))}
@@ -111,35 +115,38 @@ function ProductDetail() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
                             >
-                                <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
-                                <p className="mt-8 text-gray-600 leading-relaxed">{product.description}</p>
+                                <h1 className="text-3xl font-bold text-white">{product.name}</h1>
+                                <p className="mt-8 text-gray-300 leading-relaxed">{product.description}</p>
                                 
                                 <div className="mt-8 flex items-center">
-                                    <span className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+                                    <span className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                                         ${product.price}
                                     </span>
-                                    <span className="ml-4 text-sm text-gray-500">
-                                        {product.stock > 0 ? `${product.stock} in stock` : 'Out of stock'}
+                                    <span className="ml-4 text-sm text-gray-400">
+                                        {product.stock > 0 ? 
+                                            <span className="text-green-400">{product.stock} in stock</span> 
+                                            : <span className="text-red-400">Out of stock</span>
+                                        }
                                     </span>
                                 </div>
 
                                 <div className="mt-8 flex gap-4">
                                     <motion.button
                                         onClick={() => addToCart(product)}
-                                        className="flex-1 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-xl font-medium flex items-center justify-center gap-2 hover:from-purple-700 hover:to-blue-600 transition-all duration-200"
+                                        className="flex-1 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-medium flex items-center justify-center gap-2 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg shadow-purple-500/25"
                                         whileTap={{ scale: 0.95 }}
                                     >
                                         <ShoppingCart size={20} />
                                         Add to Cart
                                     </motion.button>
                                     <motion.button
-                                        className="p-4 border-2 border-gray-200 rounded-xl text-gray-600 hover:border-purple-500 hover:text-purple-500 transition-all duration-200"
+                                        className="p-4 border border-purple-500/30 rounded-xl text-purple-400 hover:bg-purple-500/10 transition-all duration-300 backdrop-blur-sm"
                                         whileTap={{ scale: 0.95 }}
                                     >
                                         <Heart size={20} />
                                     </motion.button>
                                     <motion.button
-                                        className="p-4 border-2 border-gray-200 rounded-xl text-gray-600 hover:border-purple-500 hover:text-purple-500 transition-all duration-200"
+                                        className="p-4 border border-purple-500/30 rounded-xl text-purple-400 hover:bg-purple-500/10 transition-all duration-300 backdrop-blur-sm"
                                         whileTap={{ scale: 0.95 }}
                                     >
                                         <Share2 size={20} />
@@ -151,15 +158,15 @@ function ProductDetail() {
                 </motion.div>
 
                 {/* Thumbnail Gallery */}
-                <div className="mt-6 grid grid-cols-3 gap-4 px-4">
+                <div className="mt-6 grid grid-cols-4 md:grid-cols-6 gap-4 px-4">
                     {product?.images.map((image, index) => (
                         <motion.button
                             key={index}
                             onClick={() => setCurrentImageIndex(index)}
-                            className={`relative rounded-lg overflow-hidden ${
+                            className={`relative rounded-xl overflow-hidden backdrop-blur-lg bg-white/5 border ${
                                 currentImageIndex === index 
-                                    ? 'ring-2 ring-purple-600' 
-                                    : ''
+                                    ? 'border-purple-500' 
+                                    : 'border-white/10'
                             }`}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
