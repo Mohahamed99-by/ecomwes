@@ -1,0 +1,158 @@
+[
+    {
+        "id": 1,
+        "name": "Wireless Headphones",
+        "price": 99.99,
+        "description": "High-quality wireless headphones with noise cancellation",
+        "category": "Electronics",
+        "images": [
+            "https://imgs.search.brave.com/Xo3fxq3e5QT57_yAp_a7AWU-ghIl-VKKMT0E-_7bPKA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFKQUNXVC13V0wu/anBn",
+            "https://m.media-amazon.com/images/I/61-g7m+90eL._AC_SL1500_.jpg",
+            "https://myhypergear.com/cdn/shop/products/15610-HYG-Vibe-Wireless-Headphones-001.jpg?v=1649707539"
+        ],
+        "stock": 50
+    },
+    {
+        "id": 2,
+        "name": "Smart Watch",
+        "price": 199.99,
+        "description": "Fitness tracking smartwatch with heart rate monitor",
+        "category": "Electronics",
+        "images": [
+            "https://media.istockphoto.com/id/469328286/photo/smartwatch.jpg?s=612x612&w=0&k=20&c=Uns1U2fjc0M5DIzxW8qo8Wm_K7afxfNlwRWaiXs46PM=",
+            "https://i5.walmartimages.com/asr/2c1c2ccc-39a1-4aec-9430-5d1d934eb465.c315ee059f382bc635a801d8a5cb4325.jpeg",
+            "https://m.media-amazon.com/images/I/71ulah9iIwL._AC_SL1500_.jpg"
+        ],
+        "stock": 30
+    },
+    {
+        "id": 3,
+        "name": "Laptop Backpack",
+        "price": 49.99,
+        "description": "Water-resistant laptop backpack with USB charging port",
+        "category": "Accessories",
+        "images": [
+            "https://m.media-amazon.com/images/I/81vfzNUAXEL.jpg",
+            "https://images-cdn.ubuy.co.in/653ac92e19209d6ff428add0-bange-slim-laptop-backpack-for-business.jpg",
+            "https://pcpros.ma/wp-content/uploads/2024/07/RIVACASE-7760-grey-ECO-Laptop-backpack4260403571897.jpg"
+        ],
+        "stock": 100
+    },
+    {
+        "id": 4,
+        "name": "Gaming Mouse",
+        "price": 79.99,
+        "description": "RGB gaming mouse with programmable buttons",
+        "category": "Gaming",
+        "images": [
+            "https://hecategaming.com/cdn/shop/files/G3MPRO_Gaming_Mice_Catalog.webp?v=1713145339&width=5600",
+            "https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SL1500_.jpg",
+            "https://www.ultrapc.ma/11515-large_default/logitech-g502-lightspeed-wireless-gaming-mouse.jpg"
+        ],
+        "stock": 45
+    },
+    {
+        "id": 5,
+        "name": "Mechanical Keyboard",
+        "price": 129.99,
+        "description": "RGB mechanical gaming keyboard with Cherry MX switches",
+        "category": "Gaming",
+        "images": [
+            "https://mechanicalkeyboards.com/cdn/shop/articles/keyboard1.png?v=1708532767&width=940",
+            "https://m.media-amazon.com/images/I/71cngLX2xuL._AC_SL1500_.jpg",
+            "https://cdn2.unrealengine.com/mechanical-keyboard-diagonal-4080x2295-d50ff434f19c.jpg"
+        ],
+        "stock": 35
+    },
+    {
+        "id": 6,
+        "name": "Wireless Charger",
+        "price": 29.99,
+        "description": "Fast wireless charging pad for smartphones",
+        "category": "Electronics",
+        "images": [
+            "https://www.mophie.com/cdn/shop/files/401316197_Qi2MagneticWirelessCharger_HERO.jpg?v=1728522516&width=2000",
+            "https://images-cdn.ubuy.co.in/653899af4b168c52061fcb3e-15w-samsung-wireless-charger-fast.jpg",
+            "https://www.ikea.com/ma/en/images/products/livboj-wireless-charger-black__0972121_pe811541_s5.jpg"
+        ],
+        "stock": 60
+    },
+    {
+        "id": 7,
+        "name": "Portable Speaker",
+        "price": 69.99,
+        "description": "Portable Bluetooth speaker with 360-degree sound",
+        "category": "Electronics",
+        "images": [
+            "https://cdn.thewirecutter.com/wp-content/media/2024/07/portablebluetoothspeakers-2048px-3331.jpg",
+            "https://m.media-amazon.com/images/I/71JB6hM6Z6L._AC_SL1500_.jpg",
+            "https://i0.wp.com/megaphone.ma/wp-content/uploads/2024/03/xiaomi-mi-portable-bluetooth-speaker-16w.jpeg?fit=700%2C700&ssl=1"
+        ],
+        "stock": 40
+    },
+    {
+        "id": 8,
+        "name": "External Hard Drive",
+        "price": 119.99,
+        "description": "High-speed external hard drive for storing photos and videos",
+        "category": "Electronics",
+        "images": [
+            "https://www.securedatarecovery.com/Media/blog/2023/external-hard-drive.webp",
+            "https://sabrent.com/cdn/shop/products/81eTI3f1QkL._AC_SL1500_2000x.jpg?v=1635797305",
+            "https://www.digitaltrends.com/wp-content/uploads/2017/08/Samsung-T5-SSD-review-angle.jpg?fit=1500%2C1000&p=1"
+        ],
+        "stock": 25
+    },
+    {
+        "id": 9,
+        "name": "Bluetooth Earbuds",
+        "price": 59.99,
+        "description": "Sweatproof Bluetooth earbuds with noise isolation",
+        "category": "Electronics",
+        "images": [
+            "https://www.marjanemall.ma/media/catalog/product/cache/36c9d346b6653f95ce7222f403adb694/_/p/_pdt2_4_9_7_1_700x700_AAABN35497.jpg",
+            "https://m.media-amazon.com/images/I/71zny7BTRlL._AC_SL1500_.jpg",
+            "https://cubeonline.pk/cdn/shop/files/earfun-air-wireless-earbuds_1024x1024.jpg?v=1696404511"
+        ],
+        "stock": 55
+    },
+    {
+        "id": 10,
+        "name": "Smartphone Stand",
+        "price": 19.99,
+        "description": "Adjustable smartphone stand for hands-free use",
+        "category": "Accessories",
+        "images": [
+            "https://m.media-amazon.com/images/I/61srjyM7TFL._AC_SL1500_.jpg",
+            "https://www.akashi.fr/13316-thickbox_default/support-de-voyage-pour-smartphone.jpg",
+            "https://i5.walmartimages.com/seo/Universal-Mobile-Car-Phone-Holder-For-Phone-in-Car-Holder-Windshield-Cell-Stand-support-smartphone-voiture-Suporte-Porta-Celular_f4f1f126-aef2-49fa-aee4-2b1ac12efb8e.c73adde6d25d56f0e6dee57551a2b862.jpeg"
+        ],
+        "stock": 75
+    },
+    {
+        "id": 11,
+        "name": "Headphones Stand",
+        "price": 14.99,
+        "description": "Adjustable headphones stand for hands-free use",
+        "category": "Accessories",
+        "images": [
+            "https://m.media-amazon.com/images/I/616w8m7z%2BTL.jpg",
+            "https://m.media-amazon.com/images/I/61%2B924k3qCL.jpg",
+            "https://m.media-amazon.com/images/I/61n9J4oU7TL.jpg"
+        ],
+        "stock": 60
+    },
+    {
+        "id": 12,
+        "name": "Wireless Mouse",
+        "price": 39.99,
+        "description": "Wireless mouse with ergonomic design and long battery life",
+        "category": "Electronics",
+        "images": [
+            "https://m.media-amazon.com/images/I/61Q5y696UWL.jpg",
+            "https://m.media-amazon.com/images/I/61%2B924k3qCL.jpg",
+            "https://m.media-amazon.com/images/I/61n9J4oU7TL.jpg"
+        ],
+        "stock": 50
+    }
+]
